@@ -14,11 +14,11 @@ $ bash scripts/test_code.sh
 
 To run an experiment run 
 ```bash
-$ python cvar/run.py
+$ python adacvar/run.py
 ```
 To see the arguments run  
 ```bash
-$ python cvar/run.py --help 
+$ python adacvar/run.py --help 
 ```
 
 To reproduce experiments run from the main directory the following commands.
