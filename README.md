@@ -50,3 +50,13 @@ $ python experiments/run_task.py vision --job plot --shifts train --datasets mni
 $ python experiments/
 ```
 
+### Citation: This will change soon to NeuRIPS. 
+If you use adacvar in your research please use the following BibTeX entry:
+```text
+@article{curi2019adaptive,
+  title={Adaptive Sampling for Stochastic Risk-Averse Learning},
+  author={Curi, Sebastian and Levy, Kfir and Jegelka, Stefanie and Krause, Andreas and others},
+  journal={arXiv preprint arXiv:1910.12511},
+  year={2019}
+}
+```
