@@ -1,0 +1,277 @@
+cifar-10:
+  dataset: [cifar-10]
+  fixed_hyper_params:
+    folds: 1
+    verbose: 3
+    criterion: cross_entropy
+    network: vgg16_bn
+    epochs: 60
+  common_hyper_params:
+    sampler: [batch, cyclic]
+    batch-size: [128, 256]
+    learning-rate: [0.001, 0.01]
+  mean_hyper_params:
+  trunc_cvar_hyper_params:
+  adacvar_hyper_params:
+    scheduler: [constant]
+    eta: [-1, 1.0, 0.1]
+    gamma: [0, 0.01, 0.1]
+  soft_cvar_hyper_params:
+    temperature: [0.1, 1.0, 10.]
+
+fashion-mnist:
+  dataset: [fashion-mnist]
+  fixed_hyper_params:
+    folds: 1
+    verbose: 3
+    criterion: cross_entropy
+    network: LeNet-5d
+    epochs: 50
+  common_hyper_params:
+    sampler: [batch, cyclic]
+    batch-size: [128, 256]
+    learning-rate: [0.001, 0.01]
+  mean_hyper_params:
+  trunc_cvar_hyper_params:
+  adacvar_hyper_params:
+    scheduler: [constant]
+    eta: [-1, 1.0, 0.1]
+    gamma: [0, 0.01, 0.1]
+  soft_cvar_hyper_params:
+    temperature: [0.1, 1.0, 10.]
+
+mnist:
+  dataset: [mnist]
+  fixed_hyper_params:
+    folds: 1
+    verbose: 3
+    criterion: cross_entropy
+    network: LeNet-5
+    epochs: 10
+  common_hyper_params:
+    sampler: [batch, cyclic]
+    batch-size: [128, 256]
+    learning-rate: [0.001, 0.01]
+  mean_hyper_params:
+  trunc_cvar_hyper_params:
+  adacvar_hyper_params:
+    scheduler: [constant]
+    eta: [-1, 1.0, 0.1]
+    gamma: [0, 0.01, 0.1]
+  soft_cvar_hyper_params:
+    temperature: [0.1, 1.0, 10.]
+
+
+mnist-best:
+  dataset: [mnist]
+  fixed_hyper_params:
+    folds: 1
+    verbose: 3
+    criterion: cross_entropy
+    network: LeNet-5
+    epochs: 10
+  common_hyper_params:
+    sampler: [batch]
+    batch-size: [128]
+    learning-rate: [0.001]
+  mean_hyper_params:
+  trunc_cvar_hyper_params:
+  adacvar_hyper_params:
+    scheduler: [constant]
+    eta: [1.0]
+    gamma: [0.1]
+  soft_cvar_hyper_params:
+    temperature: [10.]
+
+fashion-mnist-best:
+  dataset: [fashion-mnist]
+  fixed_hyper_params:
+    folds: 1
+    verbose: 3
+    criterion: cross_entropy
+    network: LeNet-5d
+    epochs: 80
+  common_hyper_params:
+    learning-rate: [0.001]
+  adacvar_hyper_params:
+    sampler: [batch]
+    batch-size: [128]
+    scheduler: [constant]
+    eta: [1.0]
+    gamma: [0.01]
+  cvar_hyper_params:
+    sampler: [batch]
+    batch-size: [256]
+  mean_hyper_params:
+    sampler: [cyclic]
+    batch-size: [128]
+  soft_cvar_hyper_params:
+    sampler: [cyclic]
+    batch-size: [256]
+    temperature: [10.]
+
+cifar-10-best:
+  dataset: [cifar-10]
+  fixed_hyper_params:
+    folds: 1
+    verbose: 3
+    criterion: cross_entropy
+    network: vgg16_bn
+    epochs: 100
+    early-stopping-start: 50
+    early-stopping-steps: 10
+  common_hyper_params:
+    batch-size: [256]
+    learning-rate: [0.001]
+  mean_hyper_params:
+    sampler: [cyclic]
+  trunc_cvar_hyper_params:
+    sampler: [cyclic]
+  adacvar_hyper_params:
+    sampler: [batch]
+    scheduler: [constant]
+    eta: [0.1]
+    gamma: [0.01]
+  soft_cvar_hyper_params:
+    sampler: [cyclic]
+    temperature: [50.]
+
+
+mnist-regression:
+  dataset: [mnist-regression]
+  fixed_hyper_params:
+    folds: 1
+    verbose: 3
+    criterion: l2
+    network: LeNet-5
+    epochs: 10
+  common_hyper_params:
+    sampler: [batch]
+    batch-size: [128]
+    learning-rate: [0.001]
+  mean_hyper_params:
+  trunc_cvar_hyper_params:
+  adacvar_hyper_params:
+    scheduler: [constant]
+    eta: [1.0]
+    gamma: [0.1]
+  soft_cvar_hyper_params:
+    temperature: [10.]
+
+fashion-mnist-regression:
+  dataset: [fashion-mnist-regression]
+  fixed_hyper_params:
+    folds: 1
+    verbose: 3
+    criterion: l2
+    network: LeNet-5d
+    epochs: 80
+  common_hyper_params:
+    learning-rate: [0.001]
+  adacvar_hyper_params:
+    sampler: [batch]
+    batch-size: [128]
+    scheduler: [constant]
+    eta: [1.0]
+    gamma: [0.01]
+  trunc_cvar_hyper_params:
+    sampler: [batch]
+    batch-size: [256]
+  mean_hyper_params:
+    sampler: [cyclic]
+    batch-size: [128]
+  soft_cvar_hyper_params:
+    sampler: [cyclic]
+    batch-size: [256]
+    temperature: [10.]
+
+cifar-10-regression:
+  dataset: [cifar-10-regression]
+  fixed_hyper_params:
+    folds: 1
+    verbose: 3
+    criterion: l2
+    network: vgg16_bn
+    epochs: 100
+    early-stopping-start: 50
+    early-stopping-steps: 10
+  common_hyper_params:
+    batch-size: [256]
+    learning-rate: [0.001]
+  mean_hyper_params:
+    sampler: [cyclic]
+  trunc_cvar_hyper_params:
+    sampler: [cyclic]
+  adacvar_hyper_params:
+    sampler: [batch]
+    scheduler: [constant]
+    eta: [0.1]
+    gamma: [0.01]
+  soft_cvar_hyper_params:
+    sampler: [cyclic]
+    temperature: [1000.]
+
+
+test:
+  dataset: [energy-efficiency]
+  fixed_hyper_params:
+    folds: 5
+    verbose: 2
+    criterion: l2
+    epochs: 50
+  common_hyper_params:
+    network: [linear]
+    sampler: [batch]
+    batch-size: [64]
+    learning-rate: [0.001]
+  mean_hyper_params:
+  trunc_cvar_hyper_params:
+  adacvar_hyper_params:
+    scheduler: [constant]
+    eta: [0.1]
+    gamma: [0]
+  soft_cvar_hyper_params:
+    temperature: [1.0]
+
+
+regression:
+  dataset: [abalone, boston, cpu_small, normal, pareto, sinc, energy-efficiency]
+  fixed_hyper_params:
+    folds: 10
+    verbose: 2
+    criterion: l2
+    epochs: 50
+  common_hyper_params:
+    network: [linear, FC20FC20]
+    sampler: [batch, cyclic]
+    batch-size: [64, 128]
+    learning-rate: [0.001, 0.004]
+  mean_hyper_params:
+  trunc_cvar_hyper_params:
+  adacvar_hyper_params:
+    scheduler: [constant, robbins_monro]
+    eta: [-1, 1.0, 0.5, 0.1]
+    gamma: [0, 0.01, 0.1]
+  soft_cvar_hyper_params:
+    temperature: [0.1, 1.0, 10.]
+
+classification:
+  dataset: [adult, Australian, german.numer, monks-problems-1, phoneme, spambase, splice, Titanic]
+  fixed_hyper_params:
+    folds: 10
+    verbose: 2
+    criterion: cross_entropy
+    epochs: 50
+  common_hyper_params:
+    network: [linear, FC20FC20]
+    sampler: [batch, cyclic]
+    batch-size: [64, 128]
+    learning-rate: [0.001, 0.004]
+  mean_hyper_params:
+  trunc_cvar_hyper_params:
+  adacvar_hyper_params:
+    scheduler: [constant, robbins_monro]
+    eta: [-1, 1.0, 0.5, 0.1]
+    gamma: [0, 0.01, 0.1]
+  soft_cvar_hyper_params:
+    temperature: [0.1, 1.0, 10.]

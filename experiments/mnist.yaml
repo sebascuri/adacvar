@@ -1,0 +1,21 @@
+dataset: [mnist-augmented]
+fixed_hyper_params:
+  verbose: 3
+  criterion: cross_entropy
+  epochs: 10
+  network: LeNet-5
+  sampler: batch
+  batch-size: 128
+  lr-decay: 0.1
+  momentum: 0.9
+  learning-rate: 0.01
+common_hyper_params:
+mean_hyper_params:
+trunc_cvar_hyper_params:
+  learning-rate: [0.001, 0.0001]
+adacvar_hyper_params:
+  scheduler: [constant, robbins_monro]
+  eta: [-1, 1.0, 0.1]
+  gamma: [0, 0.01, 0.1]
+soft_cvar_hyper_params:
+  temperature: [0.1, 1.0, 10.]

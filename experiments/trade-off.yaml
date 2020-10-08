@@ -1,0 +1,27 @@
+dataset: [cifar-10-augmented]
+fixed_hyper_params:
+  name: trade-off
+  verbose: 3
+  criterion: cross_entropy
+  epochs: 100
+  network: vgg16_bn
+  optimizer: adam
+  sampler: batch
+  batch-size: 128
+  lr-decay: 1
+  weight-decay: 0.0005
+  learning-rate: 0.001
+  upsample: True
+common_hyper_params:
+#  network: [vgg16_bn, LeNet-5d, resnet18]
+  shift-fraction: [1.0, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01, 0.005, 0.002, 0.001]
+mean_hyper_params:
+trunc_cvar_hyper_params:
+  learning-rate: [0.0001]
+adacvar_hyper_params:
+  scheduler: [robbins_monro]
+  eta: [1.0]
+  gamma: [0]
+soft_cvar_hyper_params:
+  temperature: [1.0]
+  learning-rate: [0.0001]

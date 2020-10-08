@@ -1,0 +1,22 @@
+dataset: [Australian, german.numer, monks-problems-1, phoneme, spambase, splice, Titanic, adult]
+fixed_hyper_params:
+  verbose: 2
+  criterion: cross_entropy
+  epochs: 50
+  network: linear
+  sampler: batch
+  batch-size: 64
+  lr-decay: 0.1
+  momentum: 0.9
+  learning-rate: 0.001
+  shift-fraction: 0.1
+  upsample: True
+common_hyper_params:
+mean_hyper_params:
+trunc_cvar_hyper_params:
+adacvar_hyper_params:
+  scheduler: [constant, robbins_monro]
+  eta: [-1, 1.0, 0.1]
+  gamma: [0, 0.01, 0.1]
+soft_cvar_hyper_params:
+  temperature: [10.0]
