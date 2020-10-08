@@ -25,12 +25,12 @@ To reproduce experiments run from the main directory the following commands.
 ```bash
 $ python experiments/run_task.py classification 
 $ python experiments/run_task.py regression --shifts None
-$ python experiments/run_task.py mnist --num-threads 4 --alphas 0.1 0.01 --seeds 0 1 2
-$ python experiments/run_task.py fashion-mnist --num-threads 4 --alphas 0.1 0.01 --seeds 0 1 2
-$ python experiments/run_task.py cifar-10 --num-threads 6 --use-gpu --alphas 0.1 0.01 --seeds 0 1 2 --memory 4096
-$ python experiments/run_task.py trade-off --num-threads 6 --use-gpu --seeds 0 --memory 4096
-$ python experiments/classification-shift --job run --alpha 0.1 --shifts train test both double --num-threads 1
-$ python experiments/classification-upsample --job run --alpha 0.1 --shifts train test both double --num-threads 1
+$ python experiments/run_task.py mnist --num-threads 4
+$ python experiments/run_task.py fashion-mnist --num-threads 4
+$ python experiments/run_task.py cifar-10 --num-threads 6 --use-gpu
+$ python experiments/run_task.py trade-off --num-threads 6 --use-gpu
+$ python experiments/classification-shift --job run --alpha 0.1 --shifts train test both double
+$ python experiments/classification-upsample --job run --alpha 0.1 --shifts train test both double
 ```
 
 To post-process the experiments run.
