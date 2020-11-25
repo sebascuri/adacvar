@@ -50,7 +50,7 @@ $ python experiments/run_task.py vision --job plot --shifts train --datasets mni
 $ python experiments/
 ```
 
-### Citation: This will change soon to NeuRIPS. 
+### Citation: 
 If you use adacvar in your research please use the following BibTeX entry:
 ```text
 @article{curi2020adaptive,
