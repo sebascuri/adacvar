@@ -54,11 +54,11 @@ class ApproximateKDPP(object):
     @property
     def marginals(self):
         """Get the approximate marginals of the K-DPP."""
-        return self._enu * self._list / (1 + self._enu * self._list)
+        return np.exp(self._enu) * self._list / (1 + np.exp(self._enu) * self._list)
 
     def normalize(self):
         """Normalize and recalculate the approximation."""
         self._enu = fsolve(
-            lambda x: (np.sum(x * self._list / (1 + x * self._list)) - self.k_sample),
+            lambda x: (np.sum(np.exp(x) * self._list / (1 + np.exp(x) * self._list)) - self.k_sample),
             self._enu,
         )
